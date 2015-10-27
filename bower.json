@@ -1,0 +1,23 @@
+{
+  "name": "unison-cb",
+  "version": "0.0.0",
+  "authors": [
+    "Tarabet <tarabet@yandex.ru>"
+  ],
+  "description": "ng-unison-cb-demo",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "lib"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.7"
+  }
+}

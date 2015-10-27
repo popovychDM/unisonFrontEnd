@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html ng-app="ngApp" ng-controller="globalController">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content='true' name='HandheldFriendly'/>
+    <meta content='width' name='MobileOptimized'/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+
+    <title>Віртуальне відділення Unison Bank</title>
+    
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!--plugins!-->
+    <link rel="stylesheet" property='stylesheet' href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" media="all"/>
+    <link rel="stylesheet" property='stylesheet' href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" media="all" />
+    
+    <!--style!-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" property='stylesheet' href="css/normalize.css" type="text/css" media="all" />
+    <link rel="stylesheet" property='stylesheet' href="css/slick-theme.css" type="text/css" media="all" />
+    <link rel="stylesheet" property='stylesheet' href="css/slick.css" type="text/css" media="all" />
+    <link rel="stylesheet" property='stylesheet' href="css/style.css" type="text/css" media="all" />
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="js/ngapp.js"></script>
+    <script src="js/controllers/controllers.js"></script>
+    <script src="js/services/services.js"></script>
+    <script src="js/directives/market-products-drct.js"></script>
+    <script src="js/directives/main-slider-block-drct.js"></script>
+    
+</head>
+<body>
+    <div class="wrap">
+        <!-- 22.10 -->
+        <div class="header needs-header">
+            <div class="container">
+                <a href="/products.html" class="logo left">
+                    <img src="img/logo.svg" height="50">
+                </a>
+                <div class="phone">
+                    <i class="fa fa-phone"></i> 0 (800) 300-307
+                </div>
+                <a href="javascript:;" class="menu-btn right">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="javascript:;" class="auth-btn right">
+                    <!-- 16.10 -->Вход
+                </a>
+                <div class="clear"></div>
+            </div>
+        </div> 
+        <div class="call-popup">
+            <div class="contact-centre">
+                Контакт центр: (044) 3-907-707, 0 (800) 300-307
+            </div>
+            <a href="javascript:;" class="btn">Заказать обратный звонок</a>
+            <a href="javascript:;" class="btn">Позвонить по Skype</a>
+            <a href="javascript:;" class="btn">Начать Facebook чат</a>
+            <a href="javascript:;" class="btn">Skype-чат</a>
+        </div>
+
+        <!-- ///////////////////// BIG WHITE IS INCLUDED HERE ///////////////// -->
+        <div class="big-menu">
+            <div class="close-big-menu">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="page-title">
+                <a ng-click="navigate('/')">Главная</a>
+            </div>
+            <div class="clearfix">
+                <div class="m-menu">
+                    <a ng-click="navigate('/productsandservices')">Продукты и услуги</a>
+                    <ul>
+                        <li>
+                            <span></span><a ng-click="navigate('/products')">Кредиты</a>
+                        </li>
+                        <li>
+                            <span></span><a ng-click="navigate('/products')">Депозиты</a>
+                        </li>
+                        <li>
+                            <span></span><a ng-click="navigate('/products')">Карты</a>
+                        </li>
+                        <li>
+                            <span></span><a href="https://unison24.com.ua/#/login">Интернет банкинг</a>
+                        </li>
+                        <li>
+                            <span></span><a href="https://www.portmone.com.ua/r3/uk/terminal/">Оплата услуг</a>
+                        </li>
+                        <li>
+                            <span></span><a ng-click="navigate('/safe-rent')">Аренда сейфов</a>
+                        </li>
+                        <li>
+                            <span></span><a href="https://www.portmone.com.ua/r3/uk/perekaz/">Платежи и переводы</a>
+                        </li>
+                        <li>
+                            <span></span><a href="javascript:;">Курсы валют</a>
+                        </li>
+                        <li>
+                            <span></span><a href="javascript:;">Другое</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m-menu">
+                    <span></span><a ng-click="navigate('/userprofile')">Личный кабинет</a>
+                    <ul>
+                        <li>
+                            <span></span><a ng-click="navigate('/userprofile')">Мой профиль</a>
+                        </li>
+                        <li>
+                            <span></span><a href="catalog-requests.html">Мои заявки</a>
+                        </li>
+                        <li>
+                            <span></span><a ng-click="navigate('/catalognotifications')">Уведомления</a>
+                        </li>
+                        <li>
+                            <span></span><a ng-click="navigate('/promocorpcustomers')">Мои платежи</a>
+                        </li>
+                        <li>
+                            <span></span><a href="https://www.portmone.com.ua/r3/uk/perekaz/">Перевод денег</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m-menu">
+                    <span></span><a ng-click="navigate('/maininformsection')">Информация о банке</a>
+                    <ul>
+                        <li>
+                            <span></span><a ng-click="navigate('/catalognews')">Новости</a>
+                        </li>
+                        <li>
+                            <span></span><a ng-click="navigate('/catalogspecialoffers')">Акции</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m-menu">
+                    <span></span><a ng-click="navigate('/contacts')">Контакты и реквизиты</a>
+                    <ul>
+                        <li>
+                            <span></span><a href="departments-map.html">Карта отделений, банкоматов и ПТКС</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m-menu">
+                    <span></span><a href="FAQ.html">Вопросы и ответы</a>
+                </div>
+            </div>
+        </div>
+        <!-- ///////////////////// BIG WHITE IS INCLUDED HERE ///////////////// -->
+
+        <!-- 22.10 -->    
+        <div class="needs-main-block clearfix">
+            <img class="bg-img" src="img/bg-needs.png">
+            <div class="hello-block left">                
+                
+            </div>
+            <div class="text">
+                <span>Мы подберем под Ваши потребности оптимальные банковские продукты</span>
+                <div class="btns">
+                    <!-- 22.10 -->
+                    <a href="javascript:;" class="btn" id="needs-btn">Подобрать</a>
+                    <a href="javascript:;" class="link">Я сам знаю что хочу</a>
+                </div>
+            </div>
+        </div>  
+        
+        <div class="needs-list ">
+            <div class="container clearfix">
+                <div class="key-advantage left">
+                    <div class="container clearfix">
+                        <div class="img">
+                            <img src="img/needs5.png">
+                        </div>
+                        <div class="text">
+                            <h2>
+                                <a href="javascript:;">Мне нужны деньги</a>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="key-advantage left">
+                    <div class="container clearfix"> 
+                        <div class="img">
+                            <img src="img/needs6.png">
+                        </div>               
+                        <div class="text">
+                            <h2>
+                                <a href="javascript:;">Хочу приумножить деньги</a>
+                            </h2>
+                        </div>                    
+                    </div>
+                </div>       
+                <div class="key-advantage left">
+                    <div class="container clearfix">
+                        <div class="img">
+                            <img src="img/needs4.png">
+                        </div>
+                        <div class="text">
+                            <h2>
+                                <a href="javascript:;">Много путешествую</a>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="key-advantage left">
+                    <div class="container clearfix"> 
+                        <div class="img">
+                            <img src="img/needs3.png">
+                        </div>               
+                        <div class="text">
+                            <h2>
+                                <a href="javascript:;">У меня большая семья</a>
+                            </h2>
+                        </div>                    
+                    </div>
+                </div> 
+                <div class="key-advantage left">
+                    <div class="container clearfix">
+                        <div class="img">
+                            <img src="img/needs2.png">
+                        </div>
+                        <div class="text">
+                            <h2>
+                                <a href="javascript:;">Часто покупаю в интернете</a>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="key-advantage left">
+                    <div class="container clearfix"> 
+                        <div class="img">
+                            <img src="img/needs1.png">
+                        </div>               
+                        <div class="text">
+                            <h2>
+                                <a href="javascript:;">Сам не знаю что хочу</a> 
+                            </h2>
+                        </div>                    
+                    </div>
+                </div> 
+            </div>            
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container clearfix">
+            <div class="menu-footer">
+                <ul>
+                    <li>
+                        <a href="#">Главная</a>
+                    </li>           
+                    <li>
+                        <a href="#">Продукты и услуги</a>
+                    </li>
+                    <li>
+                        <a href="#">Информация о банке</a>
+                    </li>
+                    <li>
+                        <a href="#">Контакты и реквизиты</a>
+                    </li> 
+                    <li>
+                        <a href="#">Личный кабинет</a>
+                    </li>
+                    <li>
+                        <a href="#">Вопросы и ответы</a>
+                    </li>          
+                </ul>
+            </div>
+            <div class="contacts">
+                Контакт-центр: 
+                <span>(044) 3-907-707</span>,
+                <span>0 (800) 300-307</span>
+            </div>
+            <div class="social">
+                <a href="" class="fb"><i class="fa fa-facebook"></i></a>
+                <a href="" class="vk"><i class="fa fa-vk"></i></a>   
+                <a href="" class="tw"><i class="fa fa-twitter"></i></a>
+                <a href="" class="instagram"><i class="fa fa-instagram"></i></a>
+                <a href="" class="yt"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+        <!-- 16.10 -->
+        <div class="bottom-footer"> 
+            <div class="container clearfix">         
+                <div class="left unison">
+                    © ПАТ «Банк «ЮНІСОН»
+                </div>
+                <div class="right unison">
+                    <a href="#">Перейти на корпоративный сайт</a>
+                </div>
+            </div>  
+        </div>
+        <!-- 16.10 -->
+    </div>
+</body>
+
+<script type="text/javascript" src="js/plugins/jquery.inview.js"></script>
+<script type="text/javascript" src="js/plugins/slick.js"></script>
+<script type="text/javascript" src="js/site.js"></script>
+
+</html>

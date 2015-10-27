@@ -1,0 +1,11 @@
+<div class="main-slider-block clearfix">
+    <div class="slider-block">
+        <div class="slider-main">
+            <div ng-repeat="item in mainSliderData.items" class="slider-main-item item-anim">
+                <img class="bg-img" ng-src="img/bg-needs.png">
+                <img class="b-img" ng-src="{{ item.file_name}}">
+                <span>{{ item.name }}</span>
+            </div>
+        </div>
+    </div>
+</div>
