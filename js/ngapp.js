@@ -1,4 +1,5 @@
 var ngApp = angular.module('ngApp', [
+    'ngResource',
     'ui.router',
     'appControllers'
 ]);
@@ -13,10 +14,16 @@ ngApp.run(['$rootScope', '$state', '$stateParams',
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
 
-            $rootScope.$on('$stateChangeStart', function(event, next, current) {
-                if (next.$state.data.requireLogin === true) {
+            $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+                //console.log('event:', event);
+                //console.log('toState:', toState);
+                //console.log('toParams:', toParams);
+                //console.log('fromState:', fromState);
+                //console.log('fromParams:', fromParams);
+
+                if (toState.data.requireLogin === true) {
+                    event.preventDefault();
                     console.log('THIS SECTION REQUIRES LOGIN');
-                    //event.preventDefault();
                 } else {
                     console.log('NO LOGIN REQUIRED ON THIS PAGE');
                 }
@@ -53,6 +60,50 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 url: '/productsandservices',
                 controller: 'prodsnsrvcsCtrl',
                 templateUrl: 'js/partials/products-and-services-tmpl.html',
+                data: { requireLogin: false},
+                resolve: {
+                    // I will cause a 1 second delay
+                    delay: delay
+                }
+            })
+
+            .state('productscredit', {
+                url: '/productscredit',
+                controller: 'productscreditCtrl',
+                templateUrl: 'js/partials/products-credit-tmpl.html',
+                data: { requireLogin: false},
+                resolve: {
+                    // I will cause a 1 second delay
+                    delay: delay
+                }
+            })
+
+            .state('products', {
+                url: '/products',
+                controller: 'productsCtrl',
+                templateUrl: 'js/partials/products-tmpl.html',
+                data: { requireLogin: false},
+                resolve: {
+                    // I will cause a 1 second delay
+                    delay: delay
+                }
+            })
+
+            .state('safe-rent', {
+                url: '/safe-rent',
+                controller: 'safeRentCtrl',
+                templateUrl: 'js/partials/safe-rent-tmpl.html',
+                data: { requireLogin: false},
+                resolve: {
+                    // I will cause a 1 second delay
+                    delay: delay
+                }
+            })
+
+            .state('safe-rent', {
+                url: '/safe-rent',
+                controller: 'safeRentCtrl',
+                templateUrl: 'js/partials/safe-rent-tmpl.html',
                 data: { requireLogin: false},
                 resolve: {
                     // I will cause a 1 second delay

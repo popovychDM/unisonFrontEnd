@@ -1,6 +1,7 @@
 var appControllers = angular.module('appControllers', []);
 
 appControllers.controller('globalController', ['$scope', '$state', function($scope, $state) {
+
     $scope.$state = $state;
 
     $scope.navigate = function(stateName) {
@@ -31,12 +32,12 @@ appControllers.controller('prodsnsrvcsCtrl', ['$scope',
         //Do nothing right now
     }]);
 
-appControllers.controller('prodsCtrl', ['$scope',
+appControllers.controller('productsCtrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('prodscredit-ctrl', ['$scope',
+appControllers.controller('prodscreditCtrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
@@ -127,6 +128,11 @@ appControllers.controller('departmentsmap-ctrl', ['$scope',
     }]);
 
 appControllers.controller('departmentsmaplist-ctrl', ['$scope',
+    function ($scope) {
+        //Do nothing right now
+    }]);
+
+appControllers.controller('productscredit-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
