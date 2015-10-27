@@ -9,20 +9,21 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
     var topFilterArr = [];
     var secondFilterArr = [];
 
-    function renderProductsSecondFilters(criteria) {
-        console.log(criteria);
-    }
-
     function renderProductsTopFilters(productsObj) {
 
         console.log('renderProductsFilters:', productsObj);
         for (var i = 0; i < productsObj.items.length; i++) {
-            var arrObj = {};
+            var tempObj = {};
             if (topFilterArr.indexOf(productsObj.items[i].prod_type_name) === -1) {
+
                 topFilterArr.push(productsObj.items[i].prod_type_name);
+                for (var j = 0; j < productsObj.items.length; j++) {
+                    if (productsObj.items[i].prod_type_name === productsObj.items[j].prod_type_name) {
+                        console.log('Ok');
+                    }
+                }
             }
         }
-        renderProductsSecondFilters(topFilterArr);
         return topFilterArr;
     }
 
