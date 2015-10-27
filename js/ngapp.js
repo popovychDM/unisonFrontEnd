@@ -100,14 +100,4 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 }
             })
 
-            .state('safe-rent', {
-                url: '/safe-rent',
-                controller: 'safeRentCtrl',
-                templateUrl: 'js/partials/safe-rent-tmpl.html',
-                data: { requireLogin: false},
-                resolve: {
-                    // I will cause a 1 second delay
-                    delay: delay
-                }
-            })
     }]);
