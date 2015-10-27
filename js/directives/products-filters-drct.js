@@ -9,13 +9,20 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
     var topFilterArr = [];
     var secondFilterArr = [];
 
-    function renderProductsFilters(productsObj) {
+    function renderProductsSecondFilters(criteria) {
+        console.log(criteria);
+    }
+
+    function renderProductsTopFilters(productsObj) {
+
         console.log('renderProductsFilters:', productsObj);
         for (var i = 0; i < productsObj.items.length; i++) {
+            var arrObj = {};
             if (topFilterArr.indexOf(productsObj.items[i].prod_type_name) === -1) {
                 topFilterArr.push(productsObj.items[i].prod_type_name);
             }
         }
+        renderProductsSecondFilters(topFilterArr);
         return topFilterArr;
     }
 
@@ -25,7 +32,6 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
 
             .then(function (response) {
                 productsObj = response.data;
-                scope.topFilterArr = renderProductsFilters(productsObj);
             },
             function (response) {
                 console.log('Some error happened: ', response);
@@ -33,6 +39,7 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
 
             .then(function () {
 
+                scope.topFilterArr = renderProductsTopFilters(productsObj);
                 console.log(scope.topFilterArr);
 
                 element.html(template).show();
@@ -40,9 +47,11 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
                 setTimeout(function () {
 
                     var elements = $('.main-filter').find('a');
+
                     $(elements).bind('click', function() {
                         $(elements).removeClass('act');
                         $(this).addClass('act');
+                        renderProductsSecondFilters($(this).text());
                     })
 
                 }, 1);
