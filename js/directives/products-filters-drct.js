@@ -3,45 +3,52 @@
  */
 ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
 
-    var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/ProductStructure/1";
-    var template;
-    var productsObj;
-    var topFilterArr = [];
-    var secondFilterArr = [];
+    var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/Product/1";
+    var template, products;
 
-    function renderProductsTopFilters(productsObj) {
-
-        console.log('renderProductsFilters:', productsObj);
-        for (var i = 0; i < productsObj.items.length; i++) {
-            var tempObj = {};
-            if (topFilterArr.indexOf(productsObj.items[i].prod_type_name) === -1) {
-
-                topFilterArr.push(productsObj.items[i].prod_type_name);
-                for (var j = 0; j < productsObj.items.length; j++) {
-                    if (productsObj.items[i].prod_type_name === productsObj.items[j].prod_type_name) {
-                        console.log('Ok');
-                    }
-                }
-            }
-        }
-        return topFilterArr;
-    }
 
     function link(scope, element, attrs) {
+
+        // Choose all sub-products and return array with them
+        function genSubArray(text){
+            var arr = [];
+            var prodObj = scope.products;
+            for (var i = 0; i < prodObj.length; i += 1) {
+                if(prodObj[i].prod_type_name === text) {
+                    prodObj[i].prod_sub_type.forEach(function(elem) {
+                        arr.push(elem);
+                    });
+                }
+            }
+            return arr;
+        }
+
+        // Gets array with sub-products, generates links and appends them to sub-filter container
+        function genSubMenu(choice) {
+            var subArr = genSubArray(choice);
+            var parentCont = $('.sub-filter').find('.container');
+            var curSubFilter = $(parentCont).find('.sub-item');
+            if (curSubFilter.length !== 0) {
+                curSubFilter.remove();
+            }
+            var elem;
+            for(var i = 0; i < subArr.length; i++) {
+                elem = $('<a class="sub-item"></a>').text(subArr[i].prod_subtype_name);
+                parentCont.append(elem);
+            }
+        }
 
         ajaxSvc.getData(url)
 
             .then(function (response) {
-                productsObj = response.data;
+                scope.products = response.data.items;
+                console.log('products:', scope.products);
             },
             function (response) {
                 console.log('Some error happened: ', response);
             })
 
             .then(function () {
-
-                scope.topFilterArr = renderProductsTopFilters(productsObj);
-                console.log(scope.topFilterArr);
 
                 element.html(template).show();
 
@@ -52,7 +59,8 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
                     $(elements).bind('click', function() {
                         $(elements).removeClass('act');
                         $(this).addClass('act');
-                        renderProductsSecondFilters($(this).text());
+                        scope.topChoice = $(this).text();
+                        genSubMenu(scope.topChoice); //Generate sub-menu and append it in sub-menu container
                     })
 
                 }, 1);
@@ -63,6 +71,7 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
     }
 
     return {
+        reuire: 'ngModel',
         restrict: 'EA',
         link: link,
         replace: true,

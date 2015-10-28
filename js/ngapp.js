@@ -1,7 +1,8 @@
 var ngApp = angular.module('ngApp', [
     'ngResource',
     'ui.router',
-    'appControllers'
+    'appControllers',
+    'customFilters'
 ]);
 
 ngApp.run(['$rootScope', '$state', '$stateParams',
