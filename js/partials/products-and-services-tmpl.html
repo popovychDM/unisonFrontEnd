@@ -2,35 +2,13 @@
 
 <div class="catalog-products">
     <div class="container clearfix">
-        <div class="product-item left clearfix">
+        <div ng-repeat="item in products.items | filter: { prod_type_name : topChoice }" class="product-item left clearfix">
             <div class="img left">
-                <a href="javascript:;"><img ng-src="img/card.png"></a>
+                <a ng-href="javascript:;"><img ng-src="img/card.png"></a>
             </div>
             <div class="text right">
                 <div class="title">
-                    <a ng-click="navigate('/product')">Щедрий гаманець</a>
-                </div>
-                <a ng-click="navigate('/order')" class="btn">Заказать</a>
-            </div>
-        </div>
-        <div class="product-item left clearfix">
-            <div class="img left">
-                <a href="javascript:;"><img ng-src="img/card.png"></a>
-            </div>
-            <div class="text right">
-                <div class="title">
-                    <a ng-click="navigate('/product')">Щедрий гаманець</a>
-                </div>
-                <a ng-click="navigate('/order')" class="btn">Заказать</a>
-            </div>
-        </div>
-        <div class="product-item left clearfix">
-            <div class="img left">
-                <a href="javascript:;"><img ng-src="img/card.png"></a>
-            </div>
-            <div class="text right">
-                <div class="title">
-                    <a ng-click="navigate('/product')">Щедрий гаманець</a>
+                    <a ng-click="navigate('/product')">{{ item.prod_name}}</a>
                 </div>
                 <a ng-click="navigate('/order')" class="btn">Заказать</a>
             </div>
