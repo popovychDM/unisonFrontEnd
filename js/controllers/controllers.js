@@ -47,67 +47,111 @@ appControllers.controller('safeRentCtrl', ['$scope',
         //Do nothing right now
     }]);
 
-appControllers.controller('maininfosection-ctrl', ['$scope',
+
+appControllers.controller('maininfosectionCtrl', ['$scope',
+    //    appControllers.controller('maininfosection-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('catalognews-ctrl', ['$scope',
+appControllers.controller('catalognewsCtrl', ['$scope',
+//    appControllers.controller('catalognews-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('catalogspecoffers-ctrl', ['$scope',
+appControllers.controller('catalogspecoffersCtrl', ['$scope',
+//    appControllers.controller('catalogspecoffers-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('contacts-ctrl', ['$scope',
+appControllers.controller('contactsCtrl', ['$scope',
+//    appControllers.controller('contacts-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('promocorpcustomers-ctrl', ['$scope',
+appControllers.controller('promocorpcustomersCtrl', ['$scope',
+//    appControllers.controller('promocorpcustomers-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('news-ctrl', ['$scope',
+appControllers.controller('newsCtrl', ['$scope',
+//    appControllers.controller('news-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('specialoffer-ctrl', ['$scope',
+appControllers.controller('specialofferCtrl', ['$scope',
+//    appControllers.controller('specialoffer-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('catalognotifications-ctrl', ['$scope',
+appControllers.controller('catalognotificationsCtrl', ['$scope',
+//    appControllers.controller('catalognotifications-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('userprofile-ctrl', ['$scope',
+appControllers.controller('userprofileCtrl', ['$scope',
+//    appControllers.controller('userprofile-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('catalogrequests-ctrl', ['$scope',
+appControllers.controller('catalogrequestsCtrl', ['$scope',
+//    appControllers.controller('catalogrequests-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('faq-ctrl', ['$scope',
+appControllers.controller('faqCtrl', ['$scope',
+//    appControllers.controller('faq-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('product-ctrl', ['$scope',
+appControllers.controller('productCtrl', ['$scope',
+//    appControllers.controller('product-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
 
-appControllers.controller('productcredit-ctrl', ['$scope',
+appControllers.controller('productcreditCtrl', ['$scope',
+//    appControllers.controller('productcredit-ctrl', ['$scope',
+    function ($scope) {
+        //Do nothing right now
+    }]);
+
+appControllers.controller('orderCtrl', ['$scope',
+//    appControllers.controller('order-ctrl', ['$scope',
+    function ($scope) {
+        //Do nothing right now
+    }]);
+
+appControllers.controller('needsCtrl', ['$scope',
+//    appControllers.controller('needs-ctrl', ['$scope',
+    function ($scope) {
+        //Do nothing right now
+    }]);
+
+appControllers.controller('departmentsmapCtrl', ['$scope',
+//    appControllers.controller('departmentsmap-ctrl', ['$scope',
+    function ($scope) {
+        //Do nothing right now
+    }]);
+
+appControllers.controller('departmentsmaplistCtrl', ['$scope',
+//    appControllers.controller('departmentsmaplist-ctrl', ['$scope',
+    function ($scope) {
+        //Do nothing right now
+    }]);
+
+appControllers.controller('productscreditCtrl', ['$scope',
+//    appControllers.controller('productscredit-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
@@ -124,27 +168,5 @@ appControllers.controller('orderCtrl', ['$scope', '$state', '$stateParams', 'aja
     }]);
 
 
-
-
-
-appControllers.controller('needs-ctrl', ['$scope',
-    function ($scope) {
-        //Do nothing right now
-    }]);
-
-appControllers.controller('departmentsmap-ctrl', ['$scope',
-    function ($scope) {
-        //Do nothing right now
-    }]);
-
-appControllers.controller('departmentsmaplist-ctrl', ['$scope',
-    function ($scope) {
-        //Do nothing right now
-    }]);
-
-appControllers.controller('productscredit-ctrl', ['$scope',
-    function ($scope) {
-        //Do nothing right now
-    }]);
 
 

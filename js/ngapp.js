@@ -115,4 +115,186 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 }
             })
 
+            .state('safe-rent', {
+                url: '/safe-rent',
+                controller: 'safeRentCtrl',
+                templateUrl: 'js/partials/safe-rent-tmpl.html',
+                data: { requireLogin: false},
+                resolve: {
+                    // I will cause a 1 second delay
+                    delay: delay
+                }
+            })
+        state('/maininformsection', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/main-inform-section-tmpl.html',
+            controller: 'maininfosectionCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/catalognews', {
+            url: '/catalognews',
+            templateUrl: 'js/partials/catalog-news-tmpl.html',
+            controller: 'catalognews-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/catalogspecialoffers', {
+            url: '/catalogspecialoffers',
+            templateUrl: 'js/partials/catalog-special-offers-tmpl.html',
+            controller: 'catalogspecoffers-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/promocorpcustomers', {
+            url: '/promocorpcustomers',
+            templateUrl: 'js/partials/promo-corp-customers-tmpl.html',
+            controller: 'promocorpcustomers-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/contacts', {
+            url: '/contacts',
+            templateUrl: 'js/partials/contacts-tmpl.html',
+            controller: 'contacts-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/news', {
+            url: '/news',
+            templateUrl: 'js/partials/news-tmpl.html',
+            controller: 'news-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/specialoffer', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/special-offer-tmpl.html',
+            controller: 'specialoffer-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/catalognotifications', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/catalog-notifications-tmpl.html',
+            controller: 'catalognotifications-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/userprofile', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/user-profile-tmpl.html',
+            controller: 'userprofile-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/catalogrequests', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/catalog-requests-tmpl.html',
+            controller: 'catalogrequests-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/faq', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/faq-tmpl.html',
+            controller: 'faq-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/product', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/product-tmpl.html',
+            controller: 'product-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/productcredit', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/product-credit-tmpl.html',
+            controller: 'productcredit-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/order', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/order-tmpl.html',
+            controller: 'order-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/needs', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/needs-tmpl.html',
+            controller: 'needs-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/departmentsmap', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/departments-map-tmpl.html',
+            controller: 'departmentsmap-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+        state('/departmentsmaplist', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/departments-map-list-tmpl.html',
+            controller: 'departmentsmaplist-ctrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+
     }]);
