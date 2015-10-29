@@ -8,7 +8,7 @@ appControllers.controller('globalController', ['$scope', '$state', function($sco
         $state.go(stateName);
     };
 
-    //Круговые переходы по нужным страницам при последовательном нажании на логотип вверху
+    // РљСЂСѓРіРѕРІС‹Рµ РїРµСЂРµС…РѕРґС‹ РїРѕ РЅСѓР¶РЅС‹Рј СЃС‚СЂР°РЅРёС†Р°Рј РїСЂРё РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕРј РЅР°Р¶Р°РЅРёРё РЅР° Р»РѕРіРѕС‚РёРї РІРІРµСЂС…Сѓ
     $scope.topcycle = function() {
         if($location.path() === '/') {
             $location.path('/needs');

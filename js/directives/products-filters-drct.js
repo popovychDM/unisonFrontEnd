@@ -26,10 +26,27 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
             var prodObj = scope.products.items;
             for (var i = 0; i < prodObj.length; i += 1) {
                 if(prodObj[i].prod_type_name === text) {
-                    subArr.push(prodObj[i].prod_subtype_name);
+                    if(subArr.indexOf(prodObj[i].prod_subtype_name) === -1) {
+                        subArr.push(prodObj[i].prod_subtype_name);
+                    }
                 }
             }
             return subArr;
+        }
+
+        // Apply this function after subMenu has been generated
+        // subFilterlogic() applies sub-filter logic
+        function subFilterlogic() {
+
+            var subElements = $('.sub-filter').find('.sub-item');
+
+            $(subElements).bind('click', function() {
+                $(subElements).removeClass('act');
+                $(this).addClass('act');
+                scope.subChoice = $(this).text();
+                console.log('subChoice:', scope.subChoice);
+                scope.$apply();
+            })
         }
 
         // Gets array with sub-products, generates links and appends them to sub-filter container
@@ -45,6 +62,7 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
                 elem = $('<a class="sub-item"></a>').text(subArr[i]);
                 parentCont.append(elem);
             }
+            subFilterlogic();
         }
 
         ajaxSvc.getData(url2)
@@ -64,10 +82,14 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
 
                 setTimeout(function () {
 
-                    var elements = $('.main-filter').find('a');
+                    // This code is called from Tiomeout function, because it needs the
+                    // template to be drawn in DOM to fine topElements in it
 
-                    $(elements).bind('click', function() {
-                        $(elements).removeClass('act');
+                    var topElements = $('.main-filter').find('a');
+
+                    $(topElements).bind('click', function() {
+                        scope.subChoice = ''; // Here we reset subChoice each time we click on topChoice
+                        $(topElements).removeClass('act');
                         $(this).addClass('act');
                         scope.topChoice = $(this).text();
                         console.log('topChoice:', scope.topChoice);
@@ -77,14 +99,13 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
 
                 }, 1);
 
-                $compile(element.contents())(scope);
+                // $compile(element.contents())(scope);
             });
 
     }
 
     return {
-        reuire: 'ngModel',
-        restrict: 'EA',
+        restrict: 'A',
         link: link,
         replace: true,
         templateUrl :"js/partials/dir-tmpl/products-filters-tmpl.html"
