@@ -38,12 +38,12 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
         // subFilterlogic() applies sub-filter logic
         function subFilterlogic() {
 
-            var subElements = $('.sub-filter').find('.sub-item');
+            var subElements = jQuery('.sub-filter').find('.sub-item');
 
-            $(subElements).bind('click', function() {
-                $(subElements).removeClass('act');
-                $(this).addClass('act');
-                scope.subChoice = $(this).text();
+            jQuery(subElements).bind('click', function() {
+                jQuery(subElements).removeClass('act');
+                jQuery(this).addClass('act');
+                scope.subChoice = jQuery(this).text();
                 console.log('subChoice:', scope.subChoice);
                 scope.$apply();
             })
@@ -52,14 +52,14 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
         // Gets array with sub-products, generates links and appends them to sub-filter container
         function genSubMenu(choice) {
             var subArr = genSubArray(choice);
-            var parentCont = $('.sub-filter').find('.container');
-            var curSubFilter = $(parentCont).find('.sub-item');
+            var parentCont = jQuery('.sub-filter').find('.container');
+            var curSubFilter = jQuery(parentCont).find('.sub-item');
             if (curSubFilter.length !== 0) {
                 curSubFilter.remove();
             }
             var elem;
             for(var i = 0; i < subArr.length; i++) {
-                elem = $('<a class="sub-item"></a>').text(subArr[i]);
+                elem = jQuery('<a class="sub-item"></a>').text(subArr[i]);
                 parentCont.append(elem);
             }
             subFilterlogic();
@@ -85,13 +85,13 @@ ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
                     // This code is called from Tiomeout function, because it needs the
                     // template to be drawn in DOM to fine topElements in it
 
-                    var topElements = $('.main-filter').find('a');
+                    var topElements = jQuery('.main-filter').find('a');
 
-                    $(topElements).bind('click', function() {
+                    jQuery(topElements).bind('click', function() {
                         scope.subChoice = ''; // Here we reset subChoice each time we click on topChoice
-                        $(topElements).removeClass('act');
-                        $(this).addClass('act');
-                        scope.topChoice = $(this).text();
+                        jQuery(topElements).removeClass('act');
+                        jQuery(this).addClass('act');
+                        scope.topChoice = jQuery(this).text();
                         console.log('topChoice:', scope.topChoice);
                         scope.$apply();
                         genSubMenu(scope.topChoice); //Generate sub-menu and append it in sub-menu container

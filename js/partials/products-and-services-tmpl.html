@@ -2,7 +2,7 @@
 
 <div class="catalog-products">
     <div class="container clearfix">
-        <div ng-repeat="item in products.items | filter: { prod_type_name : topChoice } | filter: { prod_subtype_name : subChoice }" class="product-item left clearfix">
+        <div ng-repeat="item in products.items | filter: { prod_type_name : topChoice } | filter: { prod_subtype_name : subChoice }" class="product-item left clearfix repeated-item">
             <div class="img left">
                 <a ng-href="javascript:;"><img ng-src="img/card.png"></a>
             </div>
