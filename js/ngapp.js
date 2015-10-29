@@ -186,7 +186,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             }
         })
         state('/specialoffer', {
-            url: '/maininformsection',
+            url: '/specialoffer',
             templateUrl: 'js/partials/special-offer-tmpl.html',
             controller: 'specialoffer-ctrl',
             data: { requireLogin: false},
@@ -196,7 +196,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             }
         })
         state('/catalognotifications', {
-            url: '/maininformsection',
+            url: '/catalognotifications',
             templateUrl: 'js/partials/catalog-notifications-tmpl.html',
             controller: 'catalognotifications-ctrl',
             data: { requireLogin: false},
@@ -206,7 +206,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             }
         })
         state('/userprofile', {
-            url: '/maininformsection',
+            url: '/userprofile',
             templateUrl: 'js/partials/user-profile-tmpl.html',
             controller: 'userprofile-ctrl',
             data: { requireLogin: false},
@@ -216,7 +216,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             }
         })
         state('/catalogrequests', {
-            url: '/maininformsection',
+            url: '/catalogrequests',
             templateUrl: 'js/partials/catalog-requests-tmpl.html',
             controller: 'catalogrequests-ctrl',
             data: { requireLogin: false},
@@ -226,7 +226,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             }
         })
         state('/faq', {
-            url: '/maininformsection',
+            url: '/faq',
             templateUrl: 'js/partials/faq-tmpl.html',
             controller: 'faq-ctrl',
             data: { requireLogin: false},
@@ -236,7 +236,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             }
         })
         state('/product', {
-            url: '/maininformsection',
+            url: '/product',
             templateUrl: 'js/partials/product-tmpl.html',
             controller: 'product-ctrl',
             data: { requireLogin: false},
@@ -246,7 +246,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             }
         })
         state('/productcredit', {
-            url: '/maininformsection',
+            url: '/productcredit',
             templateUrl: 'js/partials/product-credit-tmpl.html',
             controller: 'productcredit-ctrl',
             data: { requireLogin: false},
@@ -255,18 +255,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/order', {
-            url: '/maininformsection',
-            templateUrl: 'js/partials/order-tmpl.html',
-            controller: 'order-ctrl',
-            data: { requireLogin: false},
-            resolve: {
-                // I will cause a 1 second delay
-                delay: delay
-            }
-        })
         state('/needs', {
-            url: '/maininformsection',
+            url: '/needs',
             templateUrl: 'js/partials/needs-tmpl.html',
             controller: 'needs-ctrl',
             data: { requireLogin: false},
@@ -276,7 +266,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             }
         })
         state('/departmentsmap', {
-            url: '/maininformsection',
+            url: '/departmentsmap',
             templateUrl: 'js/partials/departments-map-tmpl.html',
             controller: 'departmentsmap-ctrl',
             data: { requireLogin: false},
@@ -286,7 +276,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             }
         })
         state('/departmentsmaplist', {
-            url: '/maininformsection',
+            url: '/departmentsmaplist',
             templateUrl: 'js/partials/departments-map-list-tmpl.html',
             controller: 'departmentsmaplist-ctrl',
             data: { requireLogin: false},
