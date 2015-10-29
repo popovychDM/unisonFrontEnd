@@ -115,17 +115,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 }
             })
 
-            .state('safe-rent', {
-                url: '/safe-rent',
-                controller: 'safeRentCtrl',
-                templateUrl: 'js/partials/safe-rent-tmpl.html',
-                data: { requireLogin: false},
-                resolve: {
-                    // I will cause a 1 second delay
-                    delay: delay
-                }
-            })
-        state('/maininformsection', {
+
+            .state('maininformsection', {
             url: '/maininformsection',
             templateUrl: 'js/partials/main-inform-section-tmpl.html',
             controller: 'maininfosectionCtrl',
@@ -135,7 +126,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/catalognews', {
+
+            .state('catalognews', {
             url: '/catalognews',
             templateUrl: 'js/partials/catalog-news-tmpl.html',
             controller: 'catalognews-ctrl',
@@ -145,7 +137,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/catalogspecialoffers', {
+
+            .state('catalogspecialoffers', {
             url: '/catalogspecialoffers',
             templateUrl: 'js/partials/catalog-special-offers-tmpl.html',
             controller: 'catalogspecoffers-ctrl',
@@ -155,7 +148,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/promocorpcustomers', {
+
+            .state('promocorpcustomers', {
             url: '/promocorpcustomers',
             templateUrl: 'js/partials/promo-corp-customers-tmpl.html',
             controller: 'promocorpcustomers-ctrl',
@@ -165,7 +159,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/contacts', {
+
+            .state('contacts', {
             url: '/contacts',
             templateUrl: 'js/partials/contacts-tmpl.html',
             controller: 'contacts-ctrl',
@@ -175,7 +170,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/news', {
+
+            .state('news', {
             url: '/news',
             templateUrl: 'js/partials/news-tmpl.html',
             controller: 'news-ctrl',
@@ -185,7 +181,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/specialoffer', {
+
+            .state('specialoffer', {
             url: '/specialoffer',
             templateUrl: 'js/partials/special-offer-tmpl.html',
             controller: 'specialoffer-ctrl',
@@ -195,7 +192,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/catalognotifications', {
+
+            .state('catalognotifications', {
             url: '/catalognotifications',
             templateUrl: 'js/partials/catalog-notifications-tmpl.html',
             controller: 'catalognotifications-ctrl',
@@ -205,7 +203,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/userprofile', {
+
+            .state('userprofile', {
             url: '/userprofile',
             templateUrl: 'js/partials/user-profile-tmpl.html',
             controller: 'userprofile-ctrl',
@@ -215,7 +214,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/catalogrequests', {
+
+            .state('catalogrequests', {
             url: '/catalogrequests',
             templateUrl: 'js/partials/catalog-requests-tmpl.html',
             controller: 'catalogrequests-ctrl',
@@ -225,7 +225,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/faq', {
+
+            .state('faq', {
             url: '/faq',
             templateUrl: 'js/partials/faq-tmpl.html',
             controller: 'faq-ctrl',
@@ -235,7 +236,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/product', {
+
+            .state('product', {
             url: '/product',
             templateUrl: 'js/partials/product-tmpl.html',
             controller: 'product-ctrl',
@@ -245,7 +247,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/productcredit', {
+
+            .state('productcredit', {
             url: '/productcredit',
             templateUrl: 'js/partials/product-credit-tmpl.html',
             controller: 'productcredit-ctrl',
@@ -255,7 +258,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/needs', {
+
+            .state('needs', {
             url: '/needs',
             templateUrl: 'js/partials/needs-tmpl.html',
             controller: 'needs-ctrl',
@@ -265,7 +269,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/departmentsmap', {
+
+            .state('departmentsmap', {
             url: '/departmentsmap',
             templateUrl: 'js/partials/departments-map-tmpl.html',
             controller: 'departmentsmap-ctrl',
@@ -275,7 +280,8 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 delay: delay
             }
         })
-        state('/departmentsmaplist', {
+
+            .state('departmentsmaplist', {
             url: '/departmentsmaplist',
             templateUrl: 'js/partials/departments-map-list-tmpl.html',
             controller: 'departmentsmaplist-ctrl',

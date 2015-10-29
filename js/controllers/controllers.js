@@ -9,6 +9,21 @@ appControllers.controller('globalController', ['$scope', '$state', function($sco
     };
 
     // Круговые переходы по нужным страницам при последовательном нажании на логотип вверху
+
+    $scope.topcycle = function () {
+        if($state.includes('^')) {
+            $state.go('needs');
+        }
+        if ($state.includes('needs')) {
+            $state.go('products');
+        }
+        if ($state.includes('products')) {
+            $state.go('home');
+        }
+    };
+
+
+/*
     $scope.topcycle = function() {
         if($location.path() === '/') {
             $location.path('/needs');
@@ -20,6 +35,8 @@ appControllers.controller('globalController', ['$scope', '$state', function($sco
             $location.path('/');
         }
     };
+
+    */
 }]);
 
 appControllers.controller('homepageCtrl', ['$scope',
