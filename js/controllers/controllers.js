@@ -112,10 +112,20 @@ appControllers.controller('productcredit-ctrl', ['$scope',
         //Do nothing right now
     }]);
 
-appControllers.controller('order-ctrl', ['$scope',
-    function ($scope) {
-        //Do nothing right now
+
+
+
+
+
+appControllers.controller('orderCtrl', ['$scope', '$state', '$stateParams', 'ajaxSvc',
+    function ($scope, $state, $stateParams, ajaxSvc ) {
+        $scope.$stateParams = $stateParams;
+        console.log('State params:', $scope.$stateParams);
     }]);
+
+
+
+
 
 appControllers.controller('needs-ctrl', ['$scope',
     function ($scope) {

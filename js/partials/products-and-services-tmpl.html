@@ -10,7 +10,7 @@
                 <div class="title">
                     <a ng-click="navigate('/product')">{{ item.prod_name}}</a>
                 </div>
-                <a ng-click="navigate('/order')" class="btn">Заказать</a>
+                <a ui-sref="order({ prod_type_id: {{ item.prod_type_id }} })" class="btn">Заказать</a>
             </div>
         </div>
     </div>

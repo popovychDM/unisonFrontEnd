@@ -1,5 +1,5 @@
 var ngApp = angular.module('ngApp', [
-    'ngAnimate',
+    //'ngAnimate', // Temporary commented because of bugs with ui-router
     'ui.router',
     'appControllers',
     'customFilters',
@@ -98,6 +98,20 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                 resolve: {
                     // I will cause a 1 second delay
                     delay: delay
+                }
+            })
+
+            .state('order', {
+                url: '/order',
+                controller: 'orderCtrl',
+                templateUrl: 'js/partials/order-tmpl.html',
+                data: { requireLogin: false},
+                resolve: {
+                    // I will cause a 1 second delay
+                    delay: delay
+                },
+                params: {
+                    prod_type_id: null
                 }
             })
 
