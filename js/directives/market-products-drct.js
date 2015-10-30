@@ -1,4 +1,4 @@
-ngApp.directive('marketProducts', function ($compile, ajaxSvc) {
+appDirectives.directive('marketProducts', function ($compile, ajaxSvc) {
 
     var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/KeyAdvantages/1";
     //var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/SliderBlock/1";

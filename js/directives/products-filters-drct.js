@@ -1,7 +1,7 @@
 /**
  * Created by Shuriken on 19.10.2015.
  */
-ngApp.directive('productsFilters', function ($compile, ajaxSvc) {
+appDirectives.directive('productsFilters', function ($compile, ajaxSvc) {
 
     //var url1 = "http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/Product/1";
     var url2 = "http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/ProductStructure/1";

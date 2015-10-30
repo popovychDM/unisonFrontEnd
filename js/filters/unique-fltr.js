@@ -10,9 +10,8 @@
  * @return {array}
  */
 
-var customFilters = angular.module('customFilters',[]);
 
-customFilters.filter('unique', function () {
+appFilters.filter('uniqueFltr', function () {
 
     return function (items, filterOn) {
 

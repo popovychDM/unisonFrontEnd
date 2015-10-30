@@ -2,7 +2,7 @@
  * Created by Shuriken on 24.10.2015.
  */
 
-ngApp.directive('bigMenu', function ($compile, ajaxSvc) {
+appDirectives.directive('bigMenu', function ($compile, ajaxSvc) {
 
     // var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/FastMenu/1";
     var templateUrl = "js/partials/dir-tmpl/big-menu-tmpl.html";

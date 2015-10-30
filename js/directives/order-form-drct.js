@@ -2,7 +2,7 @@
  * Created by Shuriken on 29.10.2015.
  */
 
-ngApp.directive('orderForm', function ($compile, ajaxSvc) {
+appDirectives.directive('orderForm', function ($compile, ajaxSvc) {
 
     var url = 'http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/AnketaQuest/1/1/1';
 
@@ -55,4 +55,3 @@ ngApp.directive('orderForm', function ($compile, ajaxSvc) {
         templateUrl :"js/partials/dir-tmpl/order-form-tmpl.html"
     }
 });
-

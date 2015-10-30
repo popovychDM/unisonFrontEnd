@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ngApp" ng-controller="globalController">
+<html ng-app="ngApp">
 <head>
     <meta charset="utf-8" />
 
@@ -26,7 +26,7 @@
     <link rel="stylesheet" property='stylesheet' href="css/slick-theme.css" type="text/css" media="all" />
     <link rel="stylesheet" property='stylesheet' href="css/slick.css" type="text/css" media="all" />
     <link rel="stylesheet" property='stylesheet' href="css/style.css" type="text/css" media="all" />
-    <link rel="stylesheet" property='stylesheet' href="css/ng-animate-styles.css" type="text/css" media="all" />
+    <!--<link rel="stylesheet" property='stylesheet' href="css/ng-animate-styles.css" type="text/css" media="all" />-->
 
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -41,8 +41,17 @@
     <script src="lib/angular-animate/angular-animate.min.js"></script>
 
     <script src="js/ngapp.js"></script>
+
+    <!-- controllers block -->
+    <script src="js/controllers/_module-ctrl.js"></script>
     <script src="js/controllers/controllers.js"></script>
-    <script src="js/services/services.js"></script>
+
+    <!-- services block -->
+    <script src="js/services/_module-srvc.js"></script>
+    <script src="js/services/ajaxsvc-srvc.js"></script>
+
+    <!-- directives block -->
+    <script src="js/directives/_module-drct.js"></script>
     <script src="js/directives/market-products-drct.js"></script>
     <script src="js/directives/main-slider-block-drct.js"></script>
     <script src="js/directives/fast-menu-drct.js"></script>
@@ -50,7 +59,9 @@
     <script src="js/directives/products-filters-drct.js"></script>
     <script src="js/directives/order-form-drct.js"></script>
 
-    <script src="js/filters/unique.js"></script>
+    <!-- filters block -->
+    <script src="js/filters/_module-fltr.js"></script>
+    <script src="js/filters/unique-fltr.js"></script>
 
 
 

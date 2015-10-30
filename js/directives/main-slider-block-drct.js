@@ -1,7 +1,7 @@
 /**
  * Created by Shuriken on 19.10.2015.
  */
-ngApp.directive('mainSlider', function ($compile, ajaxSvc) {
+appDirectives.directive('mainSlider', function ($compile, ajaxSvc) {
 
     var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/SliderBlock/1";
     var template;

@@ -1,8 +1,10 @@
 var ngApp = angular.module('ngApp', [
     //'ngAnimate', // Temporary commented because of bugs with ui-router
     'ui.router',
+    'appFilters',
+    'appServices',
     'appControllers',
-    'customFilters',
+    'appDirectives'
 ]);
 
 ngApp.run(['$rootScope', '$state', '$stateParams',

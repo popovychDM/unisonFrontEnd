@@ -1,4 +1,4 @@
-ngApp.factory('ajaxSvc', function($http) {
+appServices.factory('ajaxSvc', function($http) {
 
 	return {
 			getData: function(url) {
