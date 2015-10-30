@@ -130,7 +130,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('catalognews', {
             url: '/catalognews',
             templateUrl: 'js/partials/catalog-news-tmpl.html',
-            controller: 'catalognews-ctrl',
+            controller: 'catalognewsCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -141,7 +141,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('catalogspecialoffers', {
             url: '/catalogspecialoffers',
             templateUrl: 'js/partials/catalog-special-offers-tmpl.html',
-            controller: 'catalogspecoffers-ctrl',
+            controller: 'catalogspecoffersCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -152,7 +152,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('promocorpcustomers', {
             url: '/promocorpcustomers',
             templateUrl: 'js/partials/promo-corp-customers-tmpl.html',
-            controller: 'promocorpcustomers-ctrl',
+            controller: 'promocorpcustomersCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -163,7 +163,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('contacts', {
             url: '/contacts',
             templateUrl: 'js/partials/contacts-tmpl.html',
-            controller: 'contacts-ctrl',
+            controller: 'contactsCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -174,7 +174,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('news', {
             url: '/news',
             templateUrl: 'js/partials/news-tmpl.html',
-            controller: 'news-ctrl',
+            controller: 'newsCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -185,7 +185,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('specialoffer', {
             url: '/specialoffer',
             templateUrl: 'js/partials/special-offer-tmpl.html',
-            controller: 'specialoffer-ctrl',
+            controller: 'specialofferCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -196,7 +196,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('catalognotifications', {
             url: '/catalognotifications',
             templateUrl: 'js/partials/catalog-notifications-tmpl.html',
-            controller: 'catalognotifications-ctrl',
+            controller: 'catalognotificationsCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -207,7 +207,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('userprofile', {
             url: '/userprofile',
             templateUrl: 'js/partials/user-profile-tmpl.html',
-            controller: 'userprofile-ctrl',
+            controller: 'userprofileCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -218,7 +218,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('catalogrequests', {
             url: '/catalogrequests',
             templateUrl: 'js/partials/catalog-requests-tmpl.html',
-            controller: 'catalogrequests-ctrl',
+            controller: 'catalogrequestsCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -229,7 +229,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('faq', {
             url: '/faq',
             templateUrl: 'js/partials/faq-tmpl.html',
-            controller: 'faq-ctrl',
+            controller: 'faqCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -240,7 +240,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('product', {
             url: '/product',
             templateUrl: 'js/partials/product-tmpl.html',
-            controller: 'product-ctrl',
+            controller: 'productCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -251,7 +251,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('productcredit', {
             url: '/productcredit',
             templateUrl: 'js/partials/product-credit-tmpl.html',
-            controller: 'productcredit-ctrl',
+            controller: 'productcreditCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -262,7 +262,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('needs', {
             url: '/needs',
             templateUrl: 'js/partials/needs-tmpl.html',
-            controller: 'needs-ctrl',
+            controller: 'needsCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -273,7 +273,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('departmentsmap', {
             url: '/departmentsmap',
             templateUrl: 'js/partials/departments-map-tmpl.html',
-            controller: 'departmentsmap-ctrl',
+            controller: 'departmentsmapCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
@@ -284,7 +284,7 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             .state('departmentsmaplist', {
             url: '/departmentsmaplist',
             templateUrl: 'js/partials/departments-map-list-tmpl.html',
-            controller: 'departmentsmaplist-ctrl',
+            controller: 'departmentsmaplistCtrl',
             data: { requireLogin: false},
             resolve: {
                 // I will cause a 1 second delay
