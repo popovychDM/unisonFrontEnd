@@ -10,6 +10,18 @@ var ngApp = angular.module('ngApp', [
 ngApp.run(['$rootScope', '$state', '$stateParams',
         function ($rootScope,   $state,   $stateParams) {
 
+            $rootScope.topcycle = function () {
+                if($state.includes('home')) {
+                    $state.go('needs');
+                } else if ($state.includes('needs')) {
+                    $state.go('productsandservices');
+                } else if ($state.includes('productsandservices')) {
+                    $state.go('home');
+                } else {
+                    $state.go('home');
+                }
+            };
+
             // It's very handy to add references to $state and $stateParams to the $rootScope
             // so that you can access them from any scope within your applications.For example,
             // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
@@ -116,5 +128,183 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
                     prod_type_id: null
                 }
             })
+
+
+            .state('maininformsection', {
+            url: '/maininformsection',
+            templateUrl: 'js/partials/main-inform-section-tmpl.html',
+            controller: 'maininfosectionCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('catalognews', {
+            url: '/catalognews',
+            templateUrl: 'js/partials/catalog-news-tmpl.html',
+            controller: 'catalognewsCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('catalogspecialoffers', {
+            url: '/catalogspecialoffers',
+            templateUrl: 'js/partials/catalog-special-offers-tmpl.html',
+            controller: 'catalogspecoffersCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('promocorpcustomers', {
+            url: '/promocorpcustomers',
+            templateUrl: 'js/partials/promo-corp-customers-tmpl.html',
+            controller: 'promocorpcustomersCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('contacts', {
+            url: '/contacts',
+            templateUrl: 'js/partials/contacts-tmpl.html',
+            controller: 'contactsCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('news', {
+            url: '/news',
+            templateUrl: 'js/partials/news-tmpl.html',
+            controller: 'newsCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('specialoffer', {
+            url: '/specialoffer',
+            templateUrl: 'js/partials/special-offer-tmpl.html',
+            controller: 'specialofferCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('catalognotifications', {
+            url: '/catalognotifications',
+            templateUrl: 'js/partials/catalog-notifications-tmpl.html',
+            controller: 'catalognotificationsCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('userprofile', {
+            url: '/userprofile',
+            templateUrl: 'js/partials/user-profile-tmpl.html',
+            controller: 'userprofileCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('catalogrequests', {
+            url: '/catalogrequests',
+            templateUrl: 'js/partials/catalog-requests-tmpl.html',
+            controller: 'catalogrequestsCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('faq', {
+            url: '/faq',
+            templateUrl: 'js/partials/faq-tmpl.html',
+            controller: 'faqCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('product', {
+            url: '/product',
+            templateUrl: 'js/partials/product-tmpl.html',
+            controller: 'productCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('productcredit', {
+            url: '/productcredit',
+            templateUrl: 'js/partials/product-credit-tmpl.html',
+            controller: 'productcreditCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('needs', {
+            url: '/needs',
+            templateUrl: 'js/partials/needs-tmpl.html',
+            controller: 'needsCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('departmentsmap', {
+            url: '/departmentsmap',
+            templateUrl: 'js/partials/departments-map-tmpl.html',
+            controller: 'departmentsmapCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
+            .state('departmentsmaplist', {
+            url: '/departmentsmaplist',
+            templateUrl: 'js/partials/departments-map-list-tmpl.html',
+            controller: 'departmentsmaplistCtrl',
+            data: { requireLogin: false},
+            resolve: {
+                // I will cause a 1 second delay
+                delay: delay
+            }
+        })
+
 
     }]);

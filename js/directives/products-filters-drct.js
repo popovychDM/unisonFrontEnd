@@ -35,7 +35,7 @@ appDirectives.directive('productsFilters', function ($compile, ajaxSvc) {
         }
 
         // Apply this function after subMenu has been generated
-        // subFilterlogic() applies sub-filter logic
+        // subFilterlogic() adds subFilter when clicked on sub Item in Menu
         function subFilterlogic() {
 
             var subElements = jQuery('.sub-filter').find('.sub-item');

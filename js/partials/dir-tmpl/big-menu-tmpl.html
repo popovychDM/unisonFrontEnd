@@ -11,13 +11,13 @@
             <ul>
                 <li>
                     <!-- Popovich Create rout fo Credit product on products-credit-tmpl.html -->
-                    <span></span><a ui-sref="productscredit">Кредиты</a>
+                    <span></span><a ui-sref="productsandservices">Кредиты</a>
                 </li>
                 <li>
-                    <span></span><a ui-sref="products">Депозиты</a>
+                    <span></span><a ui-sref="productsandservices">Депозиты</a>
                 </li>
                 <li>
-                    <span></span><a ui-sref="products">Карты</a>
+                    <span></span><a ui-sref="productsandservices">Карты</a>
                 </li>
                 <li>
                     <span></span><a href="https://unison24.com.ua/#/login">Интернет банкинг</a>
@@ -40,19 +40,20 @@
             </ul>
         </div>
         <div class="m-menu">
-            <span></span><a ng-click="navigate('/userprofile')">Личный кабинет</a>
+            <span></span><a ui-sref="userprofile">Личный кабинет</a>
             <ul>
                 <li>
-                    <span></span><a ng-click="navigate('/userprofile')">Мой профиль</a>
+                    <span></span><a ui-sref="userprofile">Мой профиль</a>
+                 </li>
+                <li>
+
+                    <span></span><a ui-sref="catalogrequests">Мои заявки</a>
                 </li>
                 <li>
-                    <span></span><a ng-click="navigate('/catalogrequests')">Мои заявки</a>
+                    <span></span><a ui-sref="catalognotifications">Уведомления</a>
                 </li>
                 <li>
-                    <span></span><a ng-click="navigate('/catalognotifications')">Уведомления</a>
-                </li>
-                <li>
-                    <span></span><a ng-click="navigate('/promocorpcustomers')">Мои платежи</a>
+                    <span></span><a ui-sref="promocorpcustomers">Мои платежи</a>
                 </li>
                 <li>
                     <span></span><a href="https://www.portmone.com.ua/r3/uk/perekaz/">Перевод денег</a>
@@ -60,26 +61,26 @@
             </ul>
         </div>
         <div class="m-menu">
-            <span></span><a ng-click="navigate('/maininformsection')">Информация о банке</a>
+            <span></span><a ui-sref="maininformsection">Информация о банке</a>
             <ul>
                 <li>
-                    <span></span><a ng-click="navigate('/catalognews')">Новости</a>
+                    <span></span><a ui-sref="catalognews">Новости</a>
                 </li>
                 <li>
-                    <span></span><a ng-click="navigate('/catalogspecialoffers')">Акции</a>
+                    <span></span><a ui-sref="catalogspecialoffers">Акции</a>
                 </li>
             </ul>
         </div>
         <div class="m-menu">
-            <span></span><a ng-click="navigate('/contacts')">Контакты и реквизиты</a>
+            <span></span><a ui-sref="contacts">Контакты и реквизиты</a>
             <ul>
                 <li>
-                    <span></span><a ng-click="navigate('/departmentsmap')">Карта отделений, банкоматов и ПТКС</a>
+                    <span></span><a ui-sref="departmentsmap">Карта отделений, банкоматов и ПТКС</a>
                 </li>
             </ul>
         </div>
         <div class="m-menu">
-            <span></span><a ng-click="navigate('/faq')">Вопросы и ответы</a>
+            <span></span><a ui-sref="faq">Вопросы и ответы</a>
         </div>
     </div>
 </div>
