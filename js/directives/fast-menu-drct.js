@@ -43,7 +43,7 @@ appDirectives.directive('fastMenu', function ($compile, ajaxSvc) {
     }
 
     return {
-        restrict: 'E',
+        restrict: 'A',
         link: link,
         replace: true
     }

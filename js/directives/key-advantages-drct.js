@@ -1,11 +1,8 @@
 appDirectives.directive('marketProducts', function ($compile, ajaxSvc) {
 
-    var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/KeyAdvantages/1";
-    //var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/SliderBlock/1";
-    //var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/QuickMenu/1";
+    var keyAdvSlide = {};
 
-    var templateUrl = "js/partials/dir-tmpl/key-advantage-tmpl.html";
-    var template;
+    keyAdvSlide.url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/KeyAdvantages/1";
 
     $(".slider-main-item.item-anim")
         .mousemove(function(e) {
@@ -15,8 +12,6 @@ appDirectives.directive('marketProducts', function ($compile, ajaxSvc) {
         });
 
     $(".main-slider-block").height($(window).height() - 160);
-    //$(".needs-main-block").height($(window).height() - 160);
-    //
     $(".slider-main .slider-main-item").height($(window).height() - 160);
 
     $('.slider-main').slick({
@@ -36,24 +31,16 @@ appDirectives.directive('marketProducts', function ($compile, ajaxSvc) {
 
     function link(scope, element, attrs) {
 
-        ajaxSvc.getData(templateUrl)
-
-            .then(function(response) {
-            template = response.data;
-            })
-
-            .then(function() {
-            ajaxSvc.getData(url)
+            ajaxSvc.getData(keyAdvSlide.url)
                 .then(function(response) {
-                    scope.marketData = response.data;
-                    console.log('Advantages obj is:', scope.marketData);
+                    scope.ajxObj = response.data;
+                    console.log('Advantages obj is:', scope.ajxObj);
                 },
                 function(response) {
                     console.log('Some error happened: ', response);
                 })
 
             .then(function() {
-                element.html(template).show();
 
                 setTimeout(function(){
                     $(".key-advantage .container .text").each(function( i ) {
@@ -79,16 +66,13 @@ appDirectives.directive('marketProducts', function ($compile, ajaxSvc) {
 
                 },1);
 
-                $compile(element.contents())(scope);
             });
-        });
     }
 
     return {
-        restrict: 'E',
+        restrict: 'A',
         link: link,
-        //scope: {},
-        //templateUrl: 'js/partials/key-advantage-tmpl.html',
+        templateUrl: 'js/partials/dir-tmpl/key-advantage-tmpl.html',
         replace: true
     };
 });
