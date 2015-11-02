@@ -75,7 +75,7 @@ appControllers.controller('catalognotificationsCtrl', ['$scope',
 appControllers.controller('userprofileCtrl', ['$scope',
 //    appControllers.controller('userprofile-ctrl', ['$scope',
     function ($scope) {
-        //Do nothing right now
+        console.log('Hello Userprofile');
     }]);
 
 appControllers.controller('catalogrequestsCtrl', ['$scope',
