@@ -19,6 +19,7 @@ module.exports = function(config) {
         'http://code.jquery.com/ui/1.11.4/jquery-ui.js',
 
         'lib/angular/angular.min.js',
+        'lib/ui-router/release/angular-ui-router.min.js',
         'lib/angular-mocks/angular-mocks.js',
 
         'js/*.js',

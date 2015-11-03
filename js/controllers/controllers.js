@@ -72,10 +72,17 @@ appControllers.controller('catalognotificationsCtrl', ['$scope',
         //Do nothing right now
     }]);
 
-appControllers.controller('userprofileCtrl', ['$scope',
-//    appControllers.controller('userprofile-ctrl', ['$scope',
-    function ($scope) {
-        console.log('Hello Userprofile');
+appControllers.controller('userprofileCtrl', ['$scope', 'testHttpService',
+    function ($scope, testHttpService) {
+        $scope.helloMessage = "Hello Userprofile";
+        console.log($scope.helloMessage);
+
+        testHttpService.testFunction().then(function (response) {
+            $scope.testResponse = response;  //This my http response
+            console.log($scope.testResponse);
+        });
+
+
     }]);
 
 appControllers.controller('catalogrequestsCtrl', ['$scope',

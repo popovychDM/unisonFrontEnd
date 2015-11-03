@@ -3,13 +3,19 @@
  */
 
 (function () {
-    appServices.service('MyAppService', MyAppService);
-    MyAppService.$inject = ['$http', 'testUrl'];
-    function MyAppService($http, testUrl) {
+    appServices.service('testHttpService', testHttpService);
+    testHttpService.$inject = ['$http'];
+
+    function testHttpService($http) {
+
+        var testUrl = 'http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/ProductStructure/1';
+
         var service = {
             testFunction: testFunction
         };
+
         return service;
+
         function testFunction() {
             /*testurl is my backend API*/
             return $http.get(testUrl)
