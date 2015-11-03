@@ -3,8 +3,7 @@
  */
 appDirectives.directive('productsFilters', function ($compile, ajaxSvc) {
 
-    //var url1 = "http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/Product/1";
-    var url2 = "http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/ProductStructure/1";
+    var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/ProductStructure/1";
     var template, products;
 
 
@@ -65,7 +64,7 @@ appDirectives.directive('productsFilters', function ($compile, ajaxSvc) {
             subFilterlogic();
         }
 
-        ajaxSvc.getData(url2)
+        ajaxSvc.getData(url)
 
             .then(function (response) {
                 scope.products = response.data;
@@ -78,7 +77,7 @@ appDirectives.directive('productsFilters', function ($compile, ajaxSvc) {
 
             .then(function () {
 
-                element.html(template).show();
+                // element.html(template).show();
 
                 setTimeout(function () {
 

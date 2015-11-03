@@ -19,7 +19,7 @@ appDirectives.directive('mainSlider', function ($compile, ajaxSvc) {
             })
 
             .then(function () {
-                element.html(template).show();
+                // element.html(template).show();
 
                 setTimeout(function () {
 
@@ -42,15 +42,14 @@ appDirectives.directive('mainSlider', function ($compile, ajaxSvc) {
 
                 }, 1);
 
-                $compile(element.contents())(scope);
+                // $compile(element.contents())(scope);
             });
     }
 
     return {
-        restrict: 'E',
+        restrict: 'A',
         link: link,
         replace: true,
         templateUrl :"js/partials/dir-tmpl/main-slider-tmpl.html"
     }
 });
-

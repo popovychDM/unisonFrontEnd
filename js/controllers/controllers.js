@@ -92,7 +92,6 @@ appControllers.controller('catalogrequestsCtrl', ['$scope',
     }]);
 
 appControllers.controller('faqCtrl', ['$scope',
-//    appControllers.controller('faq-ctrl', ['$scope',
     function ($scope) {
         //Do nothing right now
     }]);
