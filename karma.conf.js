@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Mon Nov 02 2015 21:51:48 GMT+0200 (Финляндия (зима))
+// Generated on Tue Nov 03 2015 09:10:36 GMT+0200 (Финляндия (зима))
 
 module.exports = function(config) {
   config.set({
@@ -15,21 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'http://code.jquery.com/jquery-1.11.1.min.js',
-        'http://code.jquery.com/ui/1.11.4/jquery-ui.js',
-
-        'js/plugins/*.js',
-
-        'lib/angular/angular.min.js',
-
-        'js/controllers/*.js',
-        'js/directives/*.js',
-        'js/filters/*.js',
-        'js/partials/*.html',
-        'js/services/*.js',
-        'tests/*.js',
-        'tests/specs/*.js',
-        'js/*.js'
+      'js/*.js'
     ],
 
 
