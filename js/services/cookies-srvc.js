@@ -4,13 +4,19 @@
 
 (function() {
 
-    appServices.factory('langPref', ['$cookieStore', '$cookies', '$log', function($cookieStore, $cookies, $log) {
+    appServices.factory('cookiesSvc', ['$cookies', function($cookies) {
 
-        var lang_pref, lang_get;
+        function getCookie(key) {
+            return $cookies.get(key);
+        }
 
-        //langPref.cookiesObj = getCurrentLangPref();
-        $log.log('Current lang_pref:', lang_pref);
-        $log.log('Current cookies:', $cookies.getAll());
+        function getAllCookies() {
+            return $cookies.getAll();
+        }
+
+        function setCookie(key, value) {
+            $cookies.put(key, value);
+        }
 
         function toggleCurrentLangPref() {
             var curLang;
@@ -42,8 +48,9 @@
         setCurrentLangPref();
 
         return {
-            getLangPref: getCurrentLangPref(),
-            langToggle: toggleCurrentLangPref
+            getCookie: getCookie(),
+            getAllCookies: getAllCookies(),
+            setCookie: setCookie
         }
     }]);
 

@@ -4,21 +4,23 @@
 
 // Shows language icon checkbox
 
-appDirectives.directive('headerLangBtn', ['langPref', function (langPref) {
+appDirectives.directive('headerLangBtn', ['cookiesSvc', function (cookiesSvc) {
 
     function langPrefCtrl($scope) {
 
-        function getCurrentLang() {
-            $scope.langPref = langPref.getLangPref;
-            console.log('$scope.langPref: ', $scope.langPref);
+        function setCurrentLangPref() {
+            var currentCookiesObj = cookiesSvc.getAllCookies;
+            if (currentCookiesObj.lang_pref && currentCookiesObj.lang_pref !== undefined) {
+                console.log('lang_pref is present in cookies:', currentCookiesObj.lang_pref);
+                    $scope.lang_pref = 'Hello';
+            } else {
+                $log.log('Setting cookies');
+                cookiesSvc.setCookie('lang_pref', 'ukr');
+                $scope.lang_pref = 'ukr';
+            }
         }
 
-        $('.lang-btn').bind('click', function () {
-            langPref.langToggle();
-            getCurrentLang();
-        });
-
-        getCurrentLang();
+        setCurrentLangPref();
     }
 
     function link(scope, element, attrs) {
