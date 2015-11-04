@@ -26,6 +26,7 @@
     <link rel="stylesheet" property='stylesheet' href="css/slick-theme.css" type="text/css" media="all" />
     <link rel="stylesheet" property='stylesheet' href="css/slick.css" type="text/css" media="all" />
     <link rel="stylesheet" property='stylesheet' href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" property='stylesheet' href="css/mod_style.css" type="text/css" media="all" />
     <!--<link rel="stylesheet" property='stylesheet' href="css/ng-animate-styles.css" type="text/css" media="all" />-->
 
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -39,6 +40,7 @@
     <!--<script src="lib/angular-route/angular-route.min.js"></script>-->
     <script src="lib/ui-router/release/angular-ui-router.min.js"></script>
     <script src="lib/angular-animate/angular-animate.min.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.min.js"></script>
 
     <script src="js/ngapp.js"></script>
 
@@ -50,6 +52,7 @@
     <script src="js/services/_module-srvc.js"></script>
     <script src="js/services/ajaxsvc-srvc.js"></script>
     <script src="js/services/jasmine-test-http-srvc.js"></script>
+    <script src="js/services/lang-pref-srvc.js"></script>
 
     <!-- directives block -->
     <script src="js/directives/_module-drct.js"></script>
@@ -60,6 +63,7 @@
     <script src="js/directives/products-filters-drct.js"></script>
     <script src="js/directives/order-form-drct.js"></script>
     <script src="js/directives/utilities-drct.js"></script>
+    <script src="js/directives/header-lang-btn-drct.js"></script>
 
     <!-- filters block -->
     <script src="js/filters/_module-fltr.js"></script>
@@ -81,6 +85,9 @@
                 <div class="phone">
                     <i class="fa fa-phone"></i> 0 (800) 300-307
                 </div>
+                <!-- /////////// CHOOSE LANG DIRECTIVE GOES HERE ///////////// -->
+                <div header-lang-btn></div>
+                <!-- /////////// CHOOSE LANG DIRECTIVE GOES HERE ///////////// -->
                 <a href="javascript:;" class="menu-btn right">
                     <i class="fa fa-bars"></i>
                 </a>

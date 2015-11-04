@@ -38,7 +38,7 @@ appDirectives.directive('bigMenu', function ($compile, ajaxSvc) {
             };
 
     return {
-        restrict: 'EA',
+        restrict: 'A',
         link: link,
         replace: true
     }

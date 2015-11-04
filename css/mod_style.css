@@ -1,0 +1,15 @@
+.header .lang-btn {
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 44px;
+    height: 44px;
+    margin-top: 8px;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #5c2e91;
+    border: 1px solid transparent;
+}
+
+.header .lang-btn:hover{
+    border: 1px solid #5c2e91;
+}
