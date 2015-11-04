@@ -23,6 +23,7 @@
 
         function getCurrentLangPref() {
             lang_get = $cookies.get('lang_pref');
+            console.log('getCurrentLangPref():', lang_get);
             return lang_get;
         }
 

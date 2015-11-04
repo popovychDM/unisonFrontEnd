@@ -14,11 +14,8 @@ appDirectives.directive('headerLangBtn', ['langPref', function (langPref) {
         }
 
         $('.lang-btn').bind('click', function () {
-            $scope.$apply(function() {
-                langPref.langToggle();
-                $scope.langPref = langPref.getLangPref();
-            })
-
+            langPref.langToggle();
+            getCurrentLang();
         });
 
         getCurrentLang();
