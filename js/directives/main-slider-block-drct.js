@@ -1,10 +1,9 @@
 /**
  * Created by Shuriken on 19.10.2015.
  */
-appDirectives.directive('mainSlider', function ($compile, ajaxSvc) {
+appDirectives.directive('mainSlider',  ['ajaxSvc', 'extDataUrls', function (ajaxSvc, extDataUrls) {
 
-    var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/SliderBlock/1";
-    var template;
+    var url = extDataUrls.mainSlider;
 
     function link(scope, element, attrs) {
 
@@ -52,4 +51,4 @@ appDirectives.directive('mainSlider', function ($compile, ajaxSvc) {
         replace: true,
         templateUrl :"js/partials/dir-tmpl/main-slider-tmpl.html"
     }
-});
+}]);

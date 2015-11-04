@@ -47,9 +47,28 @@ ngApp.run(['$rootScope', '$state', '$stateParams',
         }
     ]);
 
-ngApp.config(['$stateProvider', '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
+ngApp.config(['$provide', '$stateProvider', '$urlRouterProvider',
+    function($provide, $stateProvider, $urlRouterProvider) {
 
+
+        // START INJECT SERVICE WITH EXTERNAL DATA URLS //
+
+        $provide.factory('extDataUrls', function() {
+            return {
+                keyAdvSlide: 'http://192.168.50.56:8080/ords/virtualbranch_ws/interface/KeyAdvantages/1',
+                mainSlider: 'http://192.168.50.56:8080/ords/virtualbranch_ws/interface/SliderBlock/1',
+                fastMenu: 'http://192.168.50.56:8080/ords/virtualbranch_ws/interface/FastMenu/1',
+                productsFilters: 'http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/ProductStructure/1',
+                orderForm: 'http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/AnketaQuest/1/1/1'
+            }
+        });
+
+
+        // END INJECT SERVICE WITH EXTERNAL DATA URLS //
+
+
+
+        // ROOTING BLOCK STARTS HERE //
         var delay = function($q, $timeout) {
             var delay = $q.defer();
             $timeout(delay.resolve, 1000);
@@ -306,5 +325,6 @@ ngApp.config(['$stateProvider', '$urlRouterProvider',
             }
         })
 
+        // ROOTING BLOCK ENDS HERE //
 
     }]);

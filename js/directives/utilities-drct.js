@@ -2,6 +2,7 @@
  * Created by Shuriken on 02.11.2015.
  */
 
+// ADDS attribute to href which opens it in new window
 appDirectives.directive('targetBlank', function() {
     return {
         restrict: 'A',

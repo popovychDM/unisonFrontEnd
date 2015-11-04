@@ -1,8 +1,8 @@
-appDirectives.directive('marketProducts', function ($compile, ajaxSvc) {
+appDirectives.directive('marketProducts', ['ajaxSvc', 'extDataUrls', function (ajaxSvc, extDataUrls) {
 
     var keyAdvSlide = {};
 
-    keyAdvSlide.url = "http://192.168.50.56:8080/ords/virtualbranch_ws/interface/KeyAdvantages/1";
+    keyAdvSlide.url = extDataUrls.keyAdvSlide;
 
     $(".slider-main-item.item-anim")
         .mousemove(function(e) {
@@ -75,6 +75,6 @@ appDirectives.directive('marketProducts', function ($compile, ajaxSvc) {
         templateUrl: 'js/partials/dir-tmpl/key-advantage-tmpl.html',
         replace: true
     };
-});
+}]);
 
 

@@ -2,9 +2,9 @@
  * Created by Shuriken on 29.10.2015.
  */
 
-appDirectives.directive('orderForm', function ($compile, ajaxSvc) {
+appDirectives.directive('orderForm', function ($compile, ajaxSvc, extDataUrls) {
 
-    var url = 'http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/AnketaQuest/1/1/1';
+    var url = extDataUrls.orderForm;
 
 
 

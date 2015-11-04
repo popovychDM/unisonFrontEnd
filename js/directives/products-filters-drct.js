@@ -1,9 +1,9 @@
 /**
  * Created by Shuriken on 19.10.2015.
  */
-appDirectives.directive('productsFilters', function ($compile, ajaxSvc) {
+appDirectives.directive('productsFilters', function ($compile, ajaxSvc, extDataUrls) {
 
-    var url = "http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/ProductStructure/1";
+    var url = extDataUrls.productsFilters;
     var template, products;
 
 
