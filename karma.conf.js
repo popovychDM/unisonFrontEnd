@@ -21,6 +21,7 @@ module.exports = function(config) {
         'lib/angular/angular.min.js',
         'lib/ui-router/release/angular-ui-router.min.js',
         'lib/angular-mocks/angular-mocks.js',
+        'lib/angular-cookies/angular-cookies.min.js',
 
         'js/*.js',
         'js/controllers/*.js',

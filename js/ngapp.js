@@ -5,7 +5,7 @@ var ngApp = angular.module('ngApp', [
     'appFilters',
     'appServices',
     'appControllers',
-    'appDirectives'
+    'appDirectives',
 ]);
 
 ngApp.run(['$rootScope', '$state', '$stateParams',
