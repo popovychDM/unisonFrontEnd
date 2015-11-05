@@ -5,12 +5,13 @@
 describe('Test modules', function() {
 
     describe('Test services modules', function() {
-        var ajaxSvc, cookiesSvc;
+        var ajaxSvc, cookiesSvc, extDataUrls;
 
         beforeEach(module('ngApp'));
         beforeEach(angular.mock.inject(function ($injector) {
             ajaxSvc = $injector.get('ajaxSvc');
             cookiesSvc = $injector.get('cookiesSvc');
+            extDataUrls = $injector.get('extDataUrls');
         }));
 
         it("test ajaxSvc to be true", function() {
@@ -19,6 +20,10 @@ describe('Test modules', function() {
 
         it("test cookiesSvc to be true", function() {
             expect(cookiesSvc).toBeTruthy();
+        });
+
+        it("test extDataUrls to be true", function() {
+            expect(extDataUrls).toBeTruthy();
         });
     });
 
@@ -43,24 +48,49 @@ describe('Test modules', function() {
     });
 });
 
+describe('Test functions', function() {
 
-//describe('Test sample http service', function () {
-//    var testHttpService,http;
-//    beforeEach(function() {
-//        module('ngApp');
-//        inject(function ($injector) {
-//            testHttpService = $injector.get('testHttpService');
-//            testUrl = 'http://192.168.50.56:8080/ords/virtualbranch_ws/reference/open/ProductStructure/1';
-//            http = $injector.get('$httpBackend');
-//        });
-//    });
-//
-//    it('should call the backend testurl ', function () {
-//        testHttpService.testFunction();
-//        http.expectGET(testUrl).respond();
-//        http.flush();
-//    });
-//});
+    describe('Test ajaxSvc to send request to extDataUrls.orderForm', function() {
+        var ajaxSvc, extDataUrls, $httpBackend, ajaxObj;
+
+        beforeEach(module('ngApp'));
+        beforeEach(angular.mock.inject(function ($injector) {
+            ajaxSvc = $injector.get('ajaxSvc');
+            extDataUrls = $injector.get('extDataUrls');
+            $httpBackend = $injector.get('$httpBackend');
+        }));
+
+        it("test ajaxSvc to be get response from $httpBackend", function() {
+            $httpBackend.when('GET', extDataUrls.orderForm).respond({fields: 'we have some fields'});
+            ajaxSvc.getData(extDataUrls.orderForm).then(function(response) {
+                ajaxObj = response.data;
+            });
+            $httpBackend.flush();
+            expect(ajaxObj.fields).toBe('we have some fields');
+        });
+    });
+});
+
+describe('Test ui-route functions', function() {
+
+    describe('Test that state "productsandservices" exists', function() {
+
+        var $rootScope, $state, state = 'productsandservices';
+
+        beforeEach(module('ngApp'));
+
+        beforeEach(angular.mock.inject(function ($injector) {
+                $rootScope = $injector.get('$rootScope');
+                $state = $injector.get('$state');
+            }));
+
+        it('should respond to URL', function() {
+            expect($state.href(state)).toEqual('#/productsandservices');
+        });
+    });
+});
+
+
 
 //describe('example test', function() {
 //    it('should be true', function() {
