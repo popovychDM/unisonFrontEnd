@@ -2,38 +2,58 @@
  * Created by Shuriken on 04.11.2015.
  */
 
-// Shows language icon checkbox
+// Shows language icon and performs language preferences tasks
 
-appDirectives.directive('headerLangBtn', ['cookiesSvc', function (cookiesSvc) {
+(function() {
 
-    function langPrefCtrl($scope) {
+    appDirectives.directive('headerLangBtn', ['cookiesSvc', function (cookiesSvc) {
 
-        function setCurrentLangPref() {
-            var currentCookiesObj = cookiesSvc.getAllCookies;
-            if (currentCookiesObj.lang_pref && currentCookiesObj.lang_pref !== undefined) {
-                console.log('lang_pref is present in cookies:', currentCookiesObj.lang_pref);
-                    $scope.lang_pref = 'Hello';
-            } else {
-                $log.log('Setting cookies');
-                cookiesSvc.setCookie('lang_pref', 'ukr');
-                $scope.lang_pref = 'ukr';
-            }
+        function langPrefCtrl($scope) {
+            // Nothing here right now
         }
 
-        setCurrentLangPref();
-    }
+        function link(scope, element, attrs) {
 
-    function link(scope, element, attrs) {
-        //Nothing here right now
-    }
+            $('.lang-btn').bind('click', function() {
+                toggleCurrentLangPref();
+            });
 
-    return {
-        restrict: 'A',
-        // link: link,
-        templateUrl: 'js/partials/dir-tmpl/header-lang-btn-tmpl.html',
-        replace: true,
-        controller: langPrefCtrl
-    };
-}]);
+            function toggleCurrentLangPref() {
+                if (cookiesSvc.getCookie('lang_pref') === 'ukr') {
+                    cookiesSvc.setCookie('lang_pref', 'rus');
+                    scope.$apply(function() {
+                        scope.langPref = 'rus';
+                    });
+                } else {
+                    cookiesSvc.setCookie('lang_pref', 'ukr');
+                    scope.$apply(function() {
+                        scope.langPref = 'ukr';
+                    });
+                }
+            }
 
+            function setCurrentLangPref() {
+                var currentCookiesObj = cookiesSvc.getAllCookies;
+                if (currentCookiesObj.lang_pref && currentCookiesObj.lang_pref !== undefined) {
+                    console.log('Current language in cookies:', currentCookiesObj.lang_pref);
+                    scope.langPref = currentCookiesObj.lang_pref;
+                } else {
+                    console.log('Setting cookies');
+                    cookiesSvc.setCookie('langPref', 'ukr');
+                    scope.langPref = 'ukr';
+                }
+            }
 
+            setCurrentLangPref();
+        }
+
+        return {
+            restrict: 'A',
+            // controller: langPrefCtrl,
+            link: link,
+            replace: true,
+            templateUrl: 'js/partials/dir-tmpl/header-lang-btn-tmpl.html'
+        };
+    }]);
+
+})();
