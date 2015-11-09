@@ -6,7 +6,7 @@
 // And can be injected constants in any module
 
 angular.module('appConstants', [])
-    .value('constants', {
+    .constant('constants', {
 
         version: '1.0.0'
 

@@ -5,19 +5,9 @@
 appDirectives.directive('fastMenu', function ($compile, ajaxSvc, extDataUrls) {
 
     var url = extDataUrls.fastMenu;
-    var templateUrl = "js/partials/dir-tmpl/fast-menu-tmpl.html";
-    var template;
-
 
     function link(scope, element, attrs) {
 
-        ajaxSvc.getData(templateUrl)
-
-            .then(function (response) {
-                template = response.data;
-            })
-
-            .then(function () {
                 ajaxSvc.getData(url)
 
                     .then(function (response) {
@@ -39,13 +29,13 @@ appDirectives.directive('fastMenu', function ($compile, ajaxSvc, extDataUrls) {
 
                         $compile(element.contents())(scope);
                     });
-            });
     }
 
     return {
         restrict: 'A',
         link: link,
-        replace: true
+        replace: true,
+        templateUrl: "js/partials/dir-tmpl/fast-menu-tmpl.html"
     }
 });
 

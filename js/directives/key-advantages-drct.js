@@ -1,4 +1,4 @@
-appDirectives.directive('marketProducts', ['ajaxSvc', 'extDataUrls', function (ajaxSvc, extDataUrls) {
+appDirectives.directive('keyAdvantages', ['ajaxSvc', 'extDataUrls', function (ajaxSvc, extDataUrls) {
 
     var keyAdvSlide = {};
 
