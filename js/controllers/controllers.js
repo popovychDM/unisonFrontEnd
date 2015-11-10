@@ -3,9 +3,10 @@ appControllers.controller('homepageCtrl', ['$scope',
         //Do nothing right now
     }]);
 
-appControllers.controller('prodsnsrvcsCtrl', ['$scope',
-    function ($scope) {
-        //Do nothing right now
+appControllers.controller('prodsnsrvcsCtrl', ['$scope', '$state', '$stateParams',
+    function ($scope, $state, $stateParams ) {
+        $scope.$stateParams = $stateParams;
+        // console.log('State params:', $scope.$stateParams);
     }]);
 
 appControllers.controller('productsCtrl', ['$scope',

@@ -19,7 +19,7 @@ appDirectives.directive('fastMenu', function ($compile, ajaxSvc, extDataUrls) {
                     })
 
                     .then(function () {
-                        element.html(template).show();
+                        //element.html(template).show();
 
                         setTimeout(function () {
 
@@ -27,7 +27,7 @@ appDirectives.directive('fastMenu', function ($compile, ajaxSvc, extDataUrls) {
 
                         }, 1);
 
-                        $compile(element.contents())(scope);
+                        //$compile(element.contents())(scope);
                     });
     }
 

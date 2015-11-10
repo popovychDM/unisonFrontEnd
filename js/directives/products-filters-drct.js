@@ -9,6 +9,31 @@ appDirectives.directive('productsFilters', function ($compile, ajaxSvc, extDataU
 
     function link(scope, element, attrs) {
 
+
+        // This function runs to check if some filter should be applied
+        // on products to show. This filter is passed from other page
+        // via $stateParams variable.
+        // Here we check if this variable is true. If true, we apply filter.
+
+        function checkScopeParams() {
+           var criteria;
+           var productsArr = scope.products.items;
+           if (scope.$stateParams.fast_menu_filter) {
+               criteria = scope.$stateParams.fast_menu_filter;
+               for (var i = 0; i < productsArr.length; i++) {
+                   if (productsArr[i].prod_type_name === criteria) {
+                       scope.topChoice = criteria;
+                       scope.$apply();
+                       return;
+                   } else if (productsArr[i].prod_subtype_name === criteria) {
+                       scope.subChoice = criteria;
+                       scope.$apply();
+                       return;
+                   }
+               }
+           }
+       }
+
         function genTopArray(productsArr) {
             var topArr = [];
             for (var i = 0; i < productsArr.items.length; i++) {
@@ -43,7 +68,7 @@ appDirectives.directive('productsFilters', function ($compile, ajaxSvc, extDataU
                 jQuery(subElements).removeClass('act');
                 jQuery(this).addClass('act');
                 scope.subChoice = jQuery(this).text();
-                console.log('subChoice:', scope.subChoice);
+                // console.log('subChoice:', scope.subChoice);
                 scope.$apply();
             })
         }
@@ -91,10 +116,12 @@ appDirectives.directive('productsFilters', function ($compile, ajaxSvc, extDataU
                         jQuery(topElements).removeClass('act');
                         jQuery(this).addClass('act');
                         scope.topChoice = jQuery(this).text();
-                        console.log('topChoice:', scope.topChoice);
+                        // console.log('topChoice:', scope.topChoice);
                         scope.$apply();
                         genSubMenu(scope.topChoice); //Generate sub-menu and append it in sub-menu container
-                    })
+                    });
+
+                    checkScopeParams();
 
                 }, 1);
 

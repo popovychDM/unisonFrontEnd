@@ -12,7 +12,7 @@ angular.module('appRooting', ['ui.router'])
         // ROOTING BLOCK STARTS HERE //
         var delay = function ($q, $timeout) {
             var delay = $q.defer();
-            $timeout(delay.resolve, 1000);
+            $timeout(delay.resolve, 100);
             $('.close-big-menu').trigger('click'); //TODO: FIND THE WAY TO CLOSE BIG MENU AUTOMATICALY
             return delay.promise;
         };
@@ -39,6 +39,9 @@ angular.module('appRooting', ['ui.router'])
                 resolve: {
                     // I will cause a 1 second delay
                     delay: delay
+                },
+                params: {
+                    fast_menu_filter: null
                 }
             })
 
