@@ -6,9 +6,8 @@ appDirectives.directive('orderForm', [
     'formConstructSvc',
     'extDataUrls',
     'ajaxSvc',
-    'restangularSvc',
 
-    function (formConstructSvc, extDataUrls, ajaxSvc, restangularSvc) {
+    function (formConstructSvc, extDataUrls, ajaxSvc) {
 
     var url = extDataUrls.orderForm;
 

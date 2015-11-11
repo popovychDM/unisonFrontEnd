@@ -4,5 +4,4 @@
 
 var appServices = angular.module('appServices', [
     'ngCookies',
-    'restangular'
 ]);
