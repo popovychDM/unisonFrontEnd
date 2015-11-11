@@ -2,11 +2,15 @@
  * Created by Shuriken on 29.10.2015.
  */
 
-appDirectives.directive('orderForm', ['formConstructSvc', function ($compile, ajaxSvc, extDataUrls) {
+appDirectives.directive('orderForm', [
+    'formConstructSvc',
+    'extDataUrls',
+    'ajaxSvc',
+    'restangularSvc',
+
+    function (formConstructSvc, extDataUrls, ajaxSvc, restangularSvc) {
 
     var url = extDataUrls.orderForm;
-
-
 
     var orderForm = {
         input_text : '<div class="form-field"><input type="text" placeholder="Прізвище" value="Сноу"></div>'

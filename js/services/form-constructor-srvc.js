@@ -4,7 +4,7 @@
 
 (function() {
 
-    appServices.factory('formConstructSvc', ['', function() {
+    appServices.factory('formConstructSvc', function() {
 
         var readyForm;
 
@@ -16,6 +16,6 @@
         return {
             formConstruct: construct,
         }
-    }]);
+    });
 
 })();

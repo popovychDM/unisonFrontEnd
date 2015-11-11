@@ -3,5 +3,6 @@
  */
 
 var appServices = angular.module('appServices', [
-    'ngCookies'
+    'ngCookies',
+    'restangular'
 ]);
