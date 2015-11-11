@@ -10,10 +10,11 @@ appDirectives.directive('orderForm', [
     function (formConstructSvc, extDataUrls, ajaxSvc) {
 
     var url = extDataUrls.orderForm;
-
     var orderForm = {
         input_text : '<div class="form-field"><input type="text" placeholder="Прізвище" value="Сноу"></div>'
     };
+
+    var formObj;
 
     function link(scope, element, attrs) {
 
@@ -21,7 +22,8 @@ appDirectives.directive('orderForm', [
 
             .then(function (response) {
                 scope.formFields = response.data;
-                console.log('formFields:',  scope.formFields);
+                // console.log('formFields:',  scope.formFields);
+                formObj = formConstructSvc.formConstruct(scope.formFields);
             },
             function (response) {
                 console.log('Some error happened: ', response);
@@ -31,13 +33,17 @@ appDirectives.directive('orderForm', [
 
                 setTimeout(function () {
 
+                    var orderForm = $('.order-form-container');
+                    console.log(orderForm);
                     var user_info_container = $('.user-info').find('.left-side');
                     var field;
 
-                    for (var i = 0; i < scope.formFields.items.length; i++ ) {
-                        field = '<div class="form-field"><input type="text" placeholder="' + scope.formFields.items[i].name + '" value=""></div>';
-                        $(user_info_container).append(field);
-                    }
+                    orderForm.append(formObj);
+
+                    //for (var i = 0; i < scope.formFields.items.length; i++ ) {
+                    //    field = '<div class="form-field"><input type="text" placeholder="' + scope.formFields.items[i].name + '" value=""></div>';
+                    //    $(user_info_container).append(field);
+                    //}
 
 
                     // This code is called from Tiomeout function, because it needs the
@@ -52,7 +58,8 @@ appDirectives.directive('orderForm', [
     return {
         restrict: 'A',
         link: link,
-        replace: true,
-        templateUrl :"js/partials/dir-tmpl/order-form-tmpl.html"
+        replace: false,
+        template: '<div class="order-form-container"></div>'
+        // templateUrl :"js/partials/dir-tmpl/order-form-tmpl.html"
     }
 }]);
