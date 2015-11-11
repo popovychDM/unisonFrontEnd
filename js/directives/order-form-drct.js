@@ -2,7 +2,7 @@
  * Created by Shuriken on 29.10.2015.
  */
 
-appDirectives.directive('orderForm', function ($compile, ajaxSvc, extDataUrls) {
+appDirectives.directive('orderForm', ['formConstructSvc', function ($compile, ajaxSvc, extDataUrls) {
 
     var url = extDataUrls.orderForm;
 
@@ -11,8 +11,6 @@ appDirectives.directive('orderForm', function ($compile, ajaxSvc, extDataUrls) {
     var orderForm = {
         input_text : '<div class="form-field"><input type="text" placeholder="Прізвище" value="Сноу"></div>'
     };
-
-
 
     function link(scope, element, attrs) {
 
@@ -54,4 +52,4 @@ appDirectives.directive('orderForm', function ($compile, ajaxSvc, extDataUrls) {
         replace: true,
         templateUrl :"js/partials/dir-tmpl/order-form-tmpl.html"
     }
-});
+}]);

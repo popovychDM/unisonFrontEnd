@@ -44,11 +44,11 @@
             function setCurrentLangPref() {
                 var currentCookiesObj = cookiesSvc.getAllCookies;
                 if (currentCookiesObj.lang_pref && currentCookiesObj.lang_pref !== undefined) {
-                    console.log('Current language in cookies:', currentCookiesObj.lang_pref);
+                    // console.log('Current language in cookies:', currentCookiesObj.lang_pref);
                     scope.langPref = currentCookiesObj.lang_pref;
                     updateLangPreferences()
                 } else {
-                    console.log('Setting cookies');
+                    // console.log('Setting cookies');
                     cookiesSvc.setCookie('langPref', 'ukr');
                     scope.langPref = 'ukr';
                     updateLangPreferences();
