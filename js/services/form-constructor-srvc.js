@@ -6,7 +6,7 @@
 
     appServices.factory('formConstructSvc', function() {
 
-        var readyForm, section, fieldsObj, sectionsHTML;
+        var readyForm, section, fieldsObj, sectionsHTML, sectionWithColumns, elem;
         var rootElement = document.createDocumentFragment();
 
         function matchSectionNames(sectionName) {
@@ -42,10 +42,38 @@
             return section;
         }
 
+        function createField(fieldObj) {
+            elem = $('<input>', { type: fieldObj.field_type, placeholder: fieldObj.field_name});
+            return elem;
+        }
+
+        function createSectionColumns(section, fieldsObj) {
+
+            var dummyElemContainer;
+            var dummyElem;
+
+            var leftColumn = $('<div />').addClass('left-side');
+            var rightColumn = $('<div />').addClass('right-side');
+
+            for (var j = 0; j < fieldsObj.anketa_field.length; j += 1) {
+                dummyElem = createField(fieldsObj.anketa_field[j]);
+                //dummyElem = $('<input />', { type : 'text', placeholder:'Surname', value: 'Snow'});
+                dummyElemContainer = $('<div />').addClass('form-field').append(dummyElem);
+                if (fieldsObj.anketa_field[j].field_column === "L") {
+                    $(leftColumn).append(dummyElemContainer);
+                } else {
+                    $(rightColumn).append(dummyElemContainer);
+                }
+            }
+            $(section).find('.container').append(leftColumn).append(rightColumn);
+            return section;
+        }
+
         function buildForm() {
-            for (var i = 0; i < fieldsObj.length; i +=1) {
+            for (var i = 0; i < fieldsObj.length; i += 1) {
                 section = createSection(fieldsObj[i].block_name);
-                $(rootElement).append(section);
+                sectionWithColumns = createSectionColumns(section, fieldsObj[i]);
+                $(rootElement).append(sectionWithColumns);
             }
            return rootElement;
         }
