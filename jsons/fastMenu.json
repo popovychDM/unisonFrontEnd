@@ -1,0 +1,1 @@
+{"next":{"$ref":"http://192.168.50.56:8080/ords/virtualbranch/interface/FastMenu/1?page=1"},"items":[{"id":1,"name":"Кредитные карты","description":"Описание кредитных карт. Описание"},{"id":2,"name":"Сберегательные карты","description":"Описание Сберегательные карты"},{"id":3,"name":"Депозиты","description":"Описание Депозиты"}]}
